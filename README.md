@@ -1,5 +1,4 @@
-﻿```markdown
-# Funnel Project
+﻿# Funnel Project
 
 ## Overview
 
