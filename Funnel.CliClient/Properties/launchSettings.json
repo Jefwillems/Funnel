@@ -1,0 +1,13 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Funnel.CliClient": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "commandLineArgs": "https://localhost:7092 https://httpbin.org/",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+﻿services:
+  funnel:
+    image: funnel
+    build:
+      context: .
+      dockerfile: Funnel/Dockerfile
+
+  funnel.server:
+    image: funnel.server
+    build:
+      context: .
+      dockerfile: Funnel.Server/Dockerfile
+
+  funnel.cliclient:
+    image: funnel.cliclient
+    build:
+      context: .
+      dockerfile: Funnel.CliClient/Dockerfile

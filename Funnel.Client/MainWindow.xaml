@@ -1,0 +1,26 @@
+﻿<Window x:Class="Funnel.Client.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Funnel.Client"
+        xmlns:controls="clr-namespace:Funnel.Client.Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance {x:Type local:MainWindow}}">
+    <Grid Name="RootUiElement">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Name="ServerUrlRow" Height="Auto" />
+            <RowDefinition Name="LocalUrlRow" Height="Auto" />
+            <RowDefinition Name="StatsRow" />
+        </Grid.RowDefinitions>
+        <controls:InputRow Grid.Column="0" Grid.Row="0" LabelText="Server Url"
+                            TextContent="{Binding ServerUrl, Mode=OneWayToSource}" />
+        <controls:InputRow Grid.Column="0" Grid.Row="1" LabelText="Local Url"
+                            TextContent="{Binding LocalUrl, Mode=OneWayToSource}" />
+        <TextBlock Grid.Column="0" Grid.Row="2" Text="{Binding ServerUrl}"></TextBlock>
+    </Grid>
+</Window>
