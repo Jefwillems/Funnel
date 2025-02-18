@@ -25,10 +25,10 @@ void RunApp(Uri serverUrl, Uri localUrl)
     builder.Services.AddHttpClient()
         .ConfigureHttpClientDefaults(clientBuilder =>
         {
-            clientBuilder.ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler()
+            clientBuilder.ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
             {
                 ClientCertificateOptions = ClientCertificateOption.Manual,
-                ServerCertificateCustomValidationCallback = (message, certificate2, arg3, arg4) => true
+                ServerCertificateCustomValidationCallback = (_, _, _, _) => true
             });
         });
     builder.Services.AddHostedService<Worker>(provider =>

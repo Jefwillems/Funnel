@@ -7,10 +7,10 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Funnel.Server/Funnel.Server.csproj", "Funnel.Server/"]
-RUN dotnet restore "Funnel.Server/Funnel.Server.csproj"
+COPY ["Funnel.Server.csproj", "./"]
+RUN dotnet restore "Funnel.Server.csproj"
 COPY . .
-WORKDIR "/src/Funnel.Server"
+WORKDIR "/src/"
 RUN dotnet build "Funnel.Server.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
